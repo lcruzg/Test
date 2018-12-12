@@ -2,7 +2,7 @@ var request = require('request');
 var obj;
 
 
-exports.getProfile = function(profileId) {
+exports.getProfile = function(profileId, callback) {
  
   const options = {  
     url: 'https://torre.bio/api/bios/'+profileId+'/education',
@@ -14,10 +14,12 @@ exports.getProfile = function(profileId) {
     }
   };
 
-  request(options, function(err, res, body) {  
-    let json = JSON.parse(body);
-	obj = json;
-  }); 
-
-  return obj;
+  request(options, function(err, res, body) { 
+	if (!err && res.statusCode == 200) {
+	  result = JSON.parse(body);
+	  return callback(null, result);
+	} else {
+	  return callback(error, null);
+	}
+  });  
 }

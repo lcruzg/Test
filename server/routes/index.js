@@ -62,8 +62,13 @@ router.get('/auth/twitter/callback',
 
 router.post('/getId', function(req, res) {
 	var username = req.body.username;
-	console.log('profile index js'+ torre.getProfile(username));
-    res.render('profile', {username: username, torre_profile: JSON.stringify(torre.getProfile(username))});
+	torre.getProfile(username, function(err, data){ 
+      if(err){
+		res.send(err);
+	  } else {
+        res.render('profile', {username: username, torre_profile: data});
+	  }
+    });
 });
 
 module.exports = router;

@@ -5,16 +5,24 @@
 
 {% block content %}
 
-<h1>{{ title }}</h1>
-    <p>Torre Profile {{username}}.</p>
-    
+ <div class="container">
+
+ <h1>{{ title }}</h1>
+    <p>Torre Profile</p>
+<br>
+    <p>Education</p>  
 <hr>
    <br>
-	<li>Profile: {{torre_profile}}</li>
+	<li>Category: {{torre_profile[0].category}}</li>
+	<li>Name: {{torre_profile[0].name}}</li>
+	<li>From: {{torre_profile[0].fromMonth}} {{torre_profile[0].fromYear}}</li>
+	<li>To: {{torre_profile[0].toMonth}} {{torre_profile[0].toYear}}</li>
+		
 <hr>
 
  <a href="/auth/linkedin" class="btn btn-default">Update with LinkedIn</a>
 
 <br><br>
+ </div>
 
 {% endblock %}
