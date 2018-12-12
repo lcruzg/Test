@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+
+{% block title %}{% endblock %}
+
+
+{% block content %}
+
+<h1>{{ title }}</h1>
+    <p>Torre Profile {{username}}.</p>
+    
+<hr>
+   <br>
+	<li>Profile: {{torre_profile}}</li>
+<hr>
+
+ <a href="/auth/linkedin" class="btn btn-default">Update with LinkedIn</a>
+
+<br><br>
+
+{% endblock %}
