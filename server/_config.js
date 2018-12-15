@@ -7,7 +7,7 @@ var ids = {
   linkedin: {
     clientID: '78uoidhft428a5',
     clientSecret: 'CnsbzOMedJTOEexI',
-    callbackURL: "http://127.0.0.1:3000/auth/linkedin/callback"
+    callbackURL: "https://profile-merge.herokuapp.com/auth/linkedin/callback"
   },
   twitter: {
     consumerKey: 'get_your_own',
