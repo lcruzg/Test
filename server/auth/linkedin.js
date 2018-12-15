@@ -10,7 +10,7 @@ passport.use(new LinkedInStrategy({
    consumerSecret: config.linkedin.clientSecret,
    callbackURL: config.linkedin.callbackURL,
    scope:        [ 'r_basicprofile', 'r_emailaddress'],
-   profileFields: ['id', 'first-name', 'last-name', 'email-address', 'headline','summary']
+   profileFields: ['id', 'first-name', 'last-name', 'email-address', 'headline','specialties','summary','positions']
  },
  
  
@@ -25,6 +25,7 @@ passport.use(new LinkedInStrategy({
     var updates = {
       name: profile.displayName,
       someID: profile.id,
+	  headline:profile._json.headline,
 	  summary: profile._json.summary };
 
     var options = {

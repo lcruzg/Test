@@ -20,8 +20,9 @@ var app = express();
 
 
 // *** mongoose *** //
-mongoose.connect('mongodb://localhost/passport-social-auth');
+/*mongoose.connect('mongodb://localhost/passport-social-auth');*/
 
+mongoose.connect('mongodb://lcruzg:lcruzg123$@ds155097.mlab.com:55097/passport-social-auth');
 
 // *** view engine *** //
 var swig = new swig.Swig();

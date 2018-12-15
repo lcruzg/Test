@@ -50,25 +50,22 @@ router.get('/auth/twitter/callback',
   });
 
   
-//torre
-
-/*router.get('/auth/torre', function(req, res, next) {
-   
-  res.render('profile', { title: 'Profile' });
-  
-});*/
-
-
-
 router.post('/getId', function(req, res) {
 	var username = req.body.username;
 	torre.getProfile(username, function(err, data){ 
       if(err){
 		res.send(err);
 	  } else {
-        res.render('profile', {username: username, torre_profile: data});
+		  
+        res.render('profile', {username: username, user: req.user, torre_profile: data});
 	  }
     });
 });
+
+
+router.post('/test', function(req, res){
+  res.render('test', { user: req.user });
+});
+
 
 module.exports = router;
